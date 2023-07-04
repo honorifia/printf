@@ -30,7 +30,7 @@ int print_reversed(va_list arg)
  */
 int rot13(va_list list)
 {
-	int index;
+	int i;
 	int x;
 	char *str;
 	char s[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -39,19 +39,18 @@ int rot13(va_list list)
 	str = va_arg(list, char *);
 	if (str == NULL)
 		return (-1);
-	for (index = 0; str[index] != '\0'; index++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
 		for (x = 0; x <= 52; x++)
 		{
-			if (str[index] == s[x])
+			if (str[i] == s[x])
 			{
 				write_char(u[x]);
 				break;
 			}
 		}
 		if (x == 53)
-			write_char(str[index]);
+			write_char(str[i]);
 	}
-	return (index);
+	return (i);
 }
-

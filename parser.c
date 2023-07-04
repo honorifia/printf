@@ -40,14 +40,13 @@ int parser(const char *format, specifier fun_list[], va_list arg_list)
 				else
 					return (-1);
 			}
-			i = i + 1;
+			i = i + 1; /*Updating i to skip format symbols*/
 		}
 		else
 		{
-			write_char(format[i]);
+			write_char(format[i]); /*call the write function*/
 			printed_chars++;
 		}
 	}
 	return (printed_chars);
 }
-

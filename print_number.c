@@ -45,20 +45,22 @@ int print_unsgined_number(unsigned int n)
 {
 	int div;
 	int len;
+	unsigned int num;
 
 	div = 1;
 	len = 0;
 
-	for (; n / div > 9; )
+	num = n;
+
+	for (; num / div > 9; )
 		div *= 10;
 
 	for (; div != 0; )
 	{
-		len += write_char('0' + n / div);
-		n %= div;
+		len += write_char('0' + num / div);
+		num %= div;
 		div /= 10;
 	}
 
 	return (len);
 }
-

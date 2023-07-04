@@ -40,4 +40,3 @@ int _printf(const char *format, ...)
 	return (printed_chars);
 
 }
-

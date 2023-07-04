@@ -192,4 +192,3 @@ int hex_check(int num, char x)
 		return (Hex[num]);
 	return (0);
 }
-
